@@ -13,10 +13,10 @@ defmodule UberDataTest do
 
   test "rejects bad string arguments" do
     data = %Uber.Data{name: 123}
-    case Uber.Data.validate(data) do
-      [{:name, _}] -> assert true
-      _ -> assert false
-    end
+    assert :yes == (case Uber.Data.validate(data) do
+      [{:name, _}] -> :yes
+      _ -> :no
+    end)
   end
   test "accepts good [string] arguments" do
     data = %Uber.Data{sending: ["application/json", "text/html"]}

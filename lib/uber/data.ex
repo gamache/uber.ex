@@ -19,8 +19,8 @@ defmodule Uber.Data do
   def validate(data) do
     transclude_error(data) ++
       action_error(data) ++
-      string_validate(data, [:id, :name, :label, :url, :version]) ++
-      list_of_strings_validate(data, [:rel, :sending, :accepting])
+      validate_string(data, [:id, :name, :label, :url, :version]) ++
+      validate_list_of_strings(data, [:rel, :sending, :accepting])
   end
 
   defp transclude_error(data) do
@@ -39,11 +39,11 @@ defmodule Uber.Data do
     end
   end
 
-  defp string_validate(data, fields) do
-    string_validate(data, fields, [])
+  defp validate_string(data, fields) do
+    validate_string(data, fields, [])
   end
 
-  defp string_validate(data, fields, acc) do
+  defp validate_string(data, fields, acc) do
     case fields do
       [] ->
         acc
@@ -54,15 +54,15 @@ defmodule Uber.Data do
         else
           []
         end
-        string_validate(data, rest, acc ++ error)
+        validate_string(data, rest, acc ++ error)
     end
   end
 
-  defp list_of_strings_validate(data, fields) do
-    list_of_strings_validate(data, fields, [])
+  defp validate_list_of_strings(data, fields) do
+    validate_list_of_strings(data, fields, [])
   end
 
-  defp list_of_strings_validate(data, fields, acc) do
+  defp validate_list_of_strings(data, fields, acc) do
     case fields do
       [] ->
         acc
@@ -74,7 +74,7 @@ defmodule Uber.Data do
         else
           []
         end
-        list_of_strings_validate(data, rest, acc ++ error)
+        validate_list_of_strings(data, rest, acc ++ error)
     end
   end
 end
