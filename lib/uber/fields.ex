@@ -8,8 +8,8 @@ defmodule Uber.Fields do
                 url: nil,            # string
                 templated: false,    # boolean
                 action: "read",      # string
-                transclude: "false", #
-                model: nil,          # "contains a template"
+                transclude: "false", # string
+                model: nil,          # string (URI Template)
                 sending: [],         # [string]
                 accepting: [],       # [string]
                 value: nil,          # value of this datum
@@ -23,7 +23,7 @@ defmodule Uber.Fields do
         import Uber.Validations
         validate_inclusion(data, :transclude, @transclude_values) ++
           validate_inclusion(data, :action, @action_values) ++
-          validate_string(data, [:id, :name, :label, :url, :version]) ++
+          validate_string(data, [:id, :name, :label, :url, :version, :model]) ++
           validate_list_of_strings(data, [:rel, :sending, :accepting]) ++
           validate_list_of_type(data, [:data], Uber.Data)
       end

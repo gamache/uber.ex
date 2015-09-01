@@ -1,8 +1,16 @@
 defmodule Uber do
+  @moduledoc """
+  Provides structures to represent and validate UBER documents, as set
+  forth in the specification at http://uberhypermedia.org/.
+  """
+
   defstruct data: [],
             error: [],
             profile: nil
 
+  @doc """
+  Returns [] on valid input, or a list of {field, error_reason}.
+  """
   def validate(uber) do
     import Uber.Validations
     validate_string(uber, [:profile]) ++
