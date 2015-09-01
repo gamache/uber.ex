@@ -3,6 +3,14 @@
 An Elixir library for the [UBER hypermedia
 format](http://uberhypermedia.org).
 
+## Installation
+
+Add the following line to `deps/0` in `mix.exs`:
+
+```elixir
+{:uber, "~> 0.1"}
+```
+
 ## Status
 
 * [x] Data model
