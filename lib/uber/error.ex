@@ -1,4 +1,5 @@
 defmodule Uber.Error do
-  defstruct data: %Uber.Data{}
+  import Uber.Fields
+  define_fields
 end
 
