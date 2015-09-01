@@ -6,7 +6,7 @@ defmodule Uber.Mixfile do
   def project do
     [app: :uber,
      version: @version,
-     description: "Utilities for working with the UBER hypermedia format",
+     description: description,
      package: package,
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
