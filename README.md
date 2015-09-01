@@ -5,7 +5,9 @@ format](http://uberhypermedia.org).
 
 ## Status
 
-Brand spanking new
+* [x] Data model
+* [ ] Serializers
+* [ ] Deserializers
 
 ## Authorship and License
 
