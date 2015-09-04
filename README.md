@@ -1,7 +1,10 @@
-# Uber.ex
+# Uber
 
-An Elixir library for the [UBER hypermedia
-format](http://uberhypermedia.org).
+[![Build Status](https://travis-ci.org/gamache/uber.ex.svg?branch=master)](https://travis-ci.org/gamache/uber.ex)
+[![Hex.pm](https://img.shields.io/hexpm/v/uber.svg?style=flat-square)](https://hex.pm/packages/uber)
+
+An Elixir library for the
+[UBER hypermedia format](http://uberhypermedia.org).
 
 ## Installation
 
